@@ -1,0 +1,31 @@
+import numpy as np
+
+def correlation_coefficient(vector1, vector2):
+    correlation = np.corrcoef(vector1, vector2)[0, 1]
+    return correlation
+
+def cosine_similarity(vector1, vector2):
+    dot_product = np.dot(vector1, vector2)
+    magnitude1 = np.linalg.norm(vector1)
+    magnitude2 = np.linalg.norm(vector2)
+    similarity = dot_product / (magnitude1 * magnitude2)
+    return similarity
+
+def euclidean_distance(vector1, vector2):
+    distance = np.linalg.norm(vector1 - vector2)
+    return distance
+
+vector1 = np.array([1, 2, 3, 4, 5])
+vector2 = np.array([5, 4, 3, 2, 1])
+
+# Correlation coefficient
+correlation = correlation_coefficient(vector1, vector2)
+print(f"Correlation Coefficient: {correlation}\n")
+
+# Cosine similarity
+cosine_sim = cosine_similarity(vector1, vector2)
+print(f"Cosine Similarity: {cosine_sim}\n")
+
+# Euclidean distance
+euclidean_dist = euclidean_distance(vector1, vector2)
+print(f"Euclidean Distance: {euclidean_dist}")
